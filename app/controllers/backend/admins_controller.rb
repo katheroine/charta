@@ -1,4 +1,4 @@
-class Backend::AdminsController < ApplicationController
+class Backend::AdminsController < Backend::ApplicationController
   # GET /admins
   # GET /admins.json
   def index

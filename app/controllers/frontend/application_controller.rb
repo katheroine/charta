@@ -1,3 +1,4 @@
-class Frontend::ApplicationController < ActionController::Base
-  protect_from_forgery
+class Frontend::ApplicationController < ApplicationController
+  layout "frontend"
 end
+
