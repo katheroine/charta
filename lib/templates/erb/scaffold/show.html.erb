@@ -1,0 +1,25 @@
+<div id="header">
+  <h1><%= human_name %> view</h1>
+</div>
+
+<%% if notice then %>
+<div id="notice" class="element">
+	<%%= notice %>
+</div>
+<%% end %>
+
+<div class="presentation">
+<% attributes.each do |attribute| -%>
+	<div class="element_field">
+	  <div class="name"><%= attribute.human_name %></div><div class="content"><%%= @<%= singular_table_name %>.<%= attribute.name %> %></div>
+	</div>
+<% end -%>	
+	<div class="controls">
+		<%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), :class => "action" %>
+		<%%= link_to 'Destroy', @<%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' }, :class => "action" %>
+	</div>
+</div>
+
+<div id="actions">
+	<%%= link_to '<%= human_name.pluralize %> list', <%= index_helper %>_path %>
+</div>

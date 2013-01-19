@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Charta</title>
+	<title>Charta</title>
+  <meta name="author" content="katheroine">
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= stylesheet_link_tag "backend/application", :media => "all" %>
   <%= stylesheet_link_tag "backend/scaffolds", :media => "all" %>
@@ -10,6 +11,36 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= yield %>
+
+  <div id="banner">
+    <div class="container">
+			<% if @current_cart %>
+				<%= hidden_div_if(@current_cart.line_items.empty?, :id => "cart") do %>
+					<%= render @current_cart %>
+				<% end %>
+			<% end %>
+			<div id="logo"><a href=""></a></div>
+    </div>
+  </div>
+  
+  <div id="menu">
+    <div class="container">
+      <a href="">company</a><a href="">staff</a><a href="">projets</a><a href="">administrators</a>
+    </div>
+  </div>
+
+  <div id="main">
+    <div class="container">
+      <%= yield %>
+    </div>
+  </div>
+
+  <div id="dashboard">
+    <div class="container">
+      charta<br>
+      project: <a href="mailto:katheroine@gmail.com">katheroine</a>
+    </div>
+  </div>
+  
 </body>
 </html>

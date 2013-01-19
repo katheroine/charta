@@ -1,69 +1,415 @@
-body {
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+/* --- header --- */
+
+div#header
+{
+	position: relative;
+	margin: 20px;
+	//text-align: right;
+	//background-color: yellow;
 }
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+div#header h1
+{
+	display: inline-block;
+	//height: 28px;
+	//padding: 10px 60px 10px 18px;
+	//border-radius: 50px;
+	//background-color: #1f1f1f;
+	//background-image: url('circle_scaffold.png');
+	//background-position: right;
+	background-repeat: no-repeat;
+	font-size: 30px;
+	color: #666666;
+	//background-color: grey;
 }
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
+/* --- messages --- */
+
+div.info,
+div#notice,
+div#warning
+{
+	margin: 20px 0;
+	padding: 10px 15px;
+	border-radius: 10px
 }
 
-a {
-  color: #000;
-  &:visited {
-    color: #666;
-  }
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
+div.info
+{
+	background-color: #006b84;
+	font-size: 16px;
+	color: #eeeeee;
 }
 
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
+div#notice,
+div#warning
+{
+	font-size: 16px;
+	color: #ffffff;
 }
 
-#notice {
-  color: green;
+div#notice.element,
+div#warning.element
+{
+	width: 670px;
 }
 
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+div#notice
+{
+	background-color: #006b84;
 }
 
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px;
-    margin-bottom: 0px;
-    background-color: #c00;
-    color: #fff;
-  }
-  ul li {
-    font-size: 12px;
-    list-style: square;
-  }
+div#warning
+{
+	background-color: #ff281f;
+}
+
+/* validation errors message */
+
+#error_explanation
+{
+	width: 670px;
+	margin: 30px 0;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: #bb221c;
+	color: #ffffff;
+	font-size: 14px;
+}
+
+#error_explanation h2
+{
+	padding-bottom: 10px;
+	font-size: 18px;
+}
+
+#error_explanation p
+{
+	padding-bottom: 6px;
+	font-size: 14px;
+}
+
+#error_explanation ul
+{
+	padding-left: 16px;
+	list-style-position: outside;
+	list-style: disc;
+	font-size: 14px;
+}
+
+/* --- controls --- */
+
+div.controls
+{
+	margin: 30px 0;
+	text-align: right;
+}
+
+div.controls.element
+{
+	margin: 10px 0;
+	width: 700px;
+}
+
+div.controls .action
+{
+	display: inline-block;
+	margin: 0;
+	padding: 5px 10px;
+	border-width: 0;
+	border-radius: 10px;
+	background-color: #666666;
+	text-decoration: none;
+	font-size: 16px;
+	color: #eeeeee;
+}
+
+div.controls .action:hover
+{
+	background-color: #1f1f1f;
+}
+
+div.controls .action.show
+{
+	visibility: hidden;
+}
+
+/* --- elements list --- */
+
+table.elements_list
+{
+	width: 900px;
+	//margin: 20px 0;
+	table-layout: auto;
+	border-collapse: separate;
+	border-spacing: 0 10px;
+	font-size: 14px;
+	//background-color: pink;
+}
+
+table.elements_list.element
+{
+	//margin: 10px 0;
+	//width: 700px;
+	//background-color: red;
+}
+
+table.elements_list th:first-child,
+table.elements_list td:first-child
+{
+	border-radius: 10px 0 0 10px;
+}
+
+table.elements_list th:last-child,
+table.elements_list td:last-child
+{
+	border-radius: 0 10px 10px 0;
+}
+
+table.elements_list th,
+table.elements_list td
+{
+	padding: 5px 14px;
+}
+
+table.elements_list th
+{
+	background-color: #666666;
+	color: #eeeeee;
+}
+
+table.elements_list td
+{
+	background-color: #bfbfbf;
+	color: #263539;
+}
+
+table.elements_list tr.summary td
+{
+	background-color: #263539;
+	color: #eeeeee;
+}
+
+table.elements_list td.description
+{
+	vertical-align: top;
+}
+
+table.elements_list td dt,
+table.elements_list td dd
+{
+	padding: 5px;
+}
+
+table.elements_list td dt
+{
+	font-size: 18px;
+}
+
+table.elements_list td dd
+{
+	font-size: 12px;
+}
+
+table.elements_list td img
+{
+	width: 200px;
+	border-radius: 3px;
+}
+
+table.elements_list td.price
+{
+	white-space: nowrap;
+	text-align: right;
+}
+
+table.elements_list td.controls
+{
+	width: 180px;
+	text-align: right;
+}
+
+table.elements_list  td.controls a
+{
+	margin: 0;
+	padding: 5px 7px;
+	border-radius: 3px;
+	text-decoration: none;
+	color: #bb221c;
+}
+
+table.elements_list td.controls a:hover
+{
+	background-color: #1f1f1f;
+	color: #eeeeee;
+}
+
+/* --- presentation --- */
+
+.presentation
+{
+	//width: 700px;
+	//margin: 15px 0;
+	padding: 0;
+	//background-color: black;
+}
+
+.presentation div.left,
+.presentation div.right
+{
+	width: 435px;
+}
+
+.presentation div.left
+{
+	float: left;
+	//background-color: red;
+}
+
+.presentation div.right
+{
+	float: right;
+	//background-color: blue;
+}
+
+.presentation div.center
+{
+	clear: both;
+	width: 900px;
+}
+
+.presentation div.element_field
+{
+	width: 690px;
+	margin: 10px 0;
+	padding: 5px;
+	border-radius: 10px;
+	background-color: #666666;
+}
+
+.presentation div.left div.element_field,
+.presentation div.right div.element_field
+{
+	width: 425px;
+}
+
+.presentation div.element_field .field_with_errors
+{
+	display: inline;
+}
+
+.presentation div.element_field .name,
+.presentation div.element_field .content
+{
+	display: inline-block;
+}
+
+.presentation div.element_field .name
+{
+	width: 250px;
+	margin: 5px 10px;
+	text-align: right;
+	vertical-align: top;
+	font-size: 16px;
+	color: #ffffff;
+}
+
+.presentation div.left div.element_field .name,
+.presentation div.right div.element_field .name
+{
+	width: 175px;
+}
+
+.presentation div.element_field .content
+{
+	width: 404px;
+	margin: 0;
+	padding: 3px 5px;
+	border: solid 3px;
+	border-radius: 5px;
+	font-size: 14px;
+	color: #263539;
+}
+
+.presentation div.left div.element_field .content,
+.presentation div.right div.element_field .content
+{
+	width: 214px;
+}
+
+.presentation div.element_field select.content
+{
+	width: 420px;
+}
+
+div.presentation div.element_field .content
+{
+	min-height: 14px;
+	border-color: #eeeeee;
+	background-color: #eeeeee;
+}
+
+form.presentation div.element_field .content
+{
+	border-color: #ffffff;
+	background-color: #ffffff;
+}
+
+.presentation div.element_field .field_with_errors .content
+{
+	border-color: #bb221c;
+}
+
+.presentation div.element_field textarea
+{
+	height: 70px;
+	resize: vertical;
+}
+
+.presentation div.controls
+{
+	width: 700px;
+	margin-top: 0;
+	//padding-bottom: 10px;
+}
+
+.presentation div.center div.controls
+{
+	width: 900px;
+}
+
+/* --- actions --- */
+
+div#actions
+{
+	margin: 20px 0;
+	//padding: 0 20px;
+	text-align: right;
+}
+
+div#actions > a
+{
+	display: inline-block;
+	padding: 8px 50px 8px 15px;
+	border-radius: 20px;
+	text-decoration: none;
+	font-size: 18px;
+	background-color: #bb221c;
+	background-image: url('circle_scaffold.png');
+	background-position: right;
+	background-repeat: no-repeat;
+	color: #ffffff;
+}
+
+div#actions > a:hover
+{
+	background-color: #ff281f;
+	color: #eeeeee;
+}
+
+div#pagination
+{
+	margin-top: 30px;
+	padding: 0 40px;
+	text-align: right;
 }

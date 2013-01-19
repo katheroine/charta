@@ -58,5 +58,11 @@ module Charta
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    # Additional config assets
+    #config.assets.paths << "#{Rails.root}/app/assets/fonts"
+    config.assets.paths << Rails.root.join("public", "images")
+    config.assets.paths << Rails.root.join("public", "audios")
+    config.assets.paths << Rails.root.join("public", "videos")
   end
 end

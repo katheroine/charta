@@ -1,49 +1,38 @@
-<%= form_for([:admin, @admin]) do |f| %>
-  <% if @admin.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@admin.errors.count, "error") %> prohibited this admin from being saved:</h2>
+<% if @admin.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@admin.errors.count, "error") %> prohibited this admin from being saved:</h2>
 
-      <ul>
-      <% @admin.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<ul>
+	<% @admin.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+	<% end %>
+	</ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label :login %><br />
-    <%= f.text_field :login %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :hashed_password %><br />
-    <%= f.text_field :hashed_password %>
-  </div>
-  <div class="field">
-    <%= f.label :salt %><br />
-    <%= f.text_field :salt %>
-  </div>
-  <div class="field">
-    <%= f.label :is_root %><br />
-    <%= f.check_box :is_root %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :surname %><br />
-    <%= f.text_field :surname %>
-  </div>
-  <div class="field">
-    <%= f.label :bio %><br />
-    <%= f.text_area :bio %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= form_for([:admin, @admin], :html => { :class => "presentation" } ) do |f| %>
+	<div class="left">
+		<div class="element_field">
+			<%= f.label :login, :class => "name" %><%= f.text_field :login, :class => "content" %>
+		</div>
+		<div class="element_field">
+			<%= f.label :email, :class => "name" %><%= f.text_field :email, :class => "content" %>
+		</div>
+		<div class="element_field">
+			<%= f.label :name, :class => "name" %><%= f.text_field :name, :class => "content" %>
+		</div>
+		<div class="element_field">
+			<%= f.label :surname, :class => "name" %><%= f.text_field :surname, :class => "content" %>
+		</div>
+	</div>
+	<div class="right">
+		<div class="element_field bio">
+			<%= f.label :bio, :class => "name" %><%= f.text_area :bio, :class => "content bio" %>
+		</div>
+	</div>
+	<div class="center">
+		<div class="controls">
+		    <%= f.submit :class => "action" %>
+		</div>
+	</div>
 <% end %>

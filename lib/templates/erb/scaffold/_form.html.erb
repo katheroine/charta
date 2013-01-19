@@ -1,0 +1,22 @@
+<%% if @<%= singular_table_name %>.errors.any? %>
+<div id="error_explanation">
+	<h2><%%= pluralize(@<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= human_name.downcase %> from being saved:</h2>
+
+	<ul>
+	<%% @<%= singular_table_name %>.errors.full_messages.each do |msg| %>
+		<li><%%= msg %></li>
+	<%% end %>
+	</ul>
+</div>
+<%% end %>
+
+<%%= form_for(@<%= singular_table_name %>, :html => { :class => "presentation" } ) do |f| %>
+<% attributes.each do |attribute| -%>
+	<div class="element_field">
+		<%%= f.label :<%= attribute.name %>, :class => "name" %><%%= f.<%= attribute.field_type %> :<%= attribute.name %>, :class => "content" %>
+	</div>
+<% end -%>
+	<div class="controls">
+	    <%%= f.submit :class => "action" %>
+	</div>
+<%% end %>

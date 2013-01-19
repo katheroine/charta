@@ -1,45 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div id="header">
+  <h1>Admin view</h1>
+</div>
 
-<p>
-  <b>Login:</b>
-  <%= @admin.login %>
-</p>
+<% if notice then %>
+<div id="notice">
+	<%= notice %>
+</div>
+<% end %>
 
-<p>
-  <b>Email:</b>
-  <%= @admin.email %>
-</p>
+<div class="presentation">
+	<div class="left">
+		<div class="element_field">
+		  <div class="name">Login</div><div class="content"><%= @admin.login %></div>
+		</div>
+		<div class="element_field">
+		  <div class="name">Email</div><div class="content"><%= @admin.email %></div>
+		</div>
+		<div class="element_field">
+		  <div class="name">Name</div><div class="content"><%= @admin.name %></div>
+		</div>
+		<div class="element_field">
+		  <div class="name">Surname</div><div class="content"><%= @admin.surname %></div>
+		</div>
+	</div>
+	<div class="right">
+		<div class="element_field bio" style="height: 176px;">
+		  <div class="name">Bio</div><div class="content bio"><%= @admin.bio %></div>
+		</div>
+	</div>
+	<div class="center">
+		<div class="controls">
+			<%= link_to 'Edit', edit_admin_admin_path(@admin), :class => "action" %>
+			<%= link_to 'Destroy', admin_admin_path(@admin), method: :delete, data: { confirm: 'Are you sure?' }, :class => "action" %>
+		</div>
+	</div>
+</div>
 
-<p>
-  <b>Hashed password:</b>
-  <%= @admin.hashed_password %>
-</p>
-
-<p>
-  <b>Salt:</b>
-  <%= @admin.salt %>
-</p>
-
-<p>
-  <b>Is root:</b>
-  <%= @admin.is_root %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @admin.name %>
-</p>
-
-<p>
-  <b>Surname:</b>
-  <%= @admin.surname %>
-</p>
-
-<p>
-  <b>Bio:</b>
-  <%= @admin.bio %>
-</p>
-
-
-<%= link_to 'Edit', edit_admin_admin_path(@admin) %> |
-<%= link_to 'Back', admin_admins_path %>
+<div id="actions">
+	<%= link_to 'Admins list', admin_admins_path %>
+</div>

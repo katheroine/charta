@@ -1,0 +1,34 @@
+<div id="header">
+	<h1>Listing <%= human_name.downcase.pluralize %></h1>
+</div>
+
+<%% unless @<%= plural_table_name %>.empty? then %>
+<table class="elements_list">
+  <thead>
+    <tr>
+<% attributes.each do |attribute| -%>
+      <th><%= attribute.human_name %></th>
+<% end -%>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+		<%%= content_tag_for(:tr, @<%= plural_table_name %>) do |<%= singular_table_name %>| %>
+<% attributes.each do |attribute| -%>
+      <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+<% end -%>
+			<td class="controls">
+				<%%= link_to 'Show', <%= singular_table_name %> %><%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %><%%= link_to 'Destroy', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' } %>
+			</td>
+		<%% end %>
+  </tbody>
+</table>
+<%% else %>
+<div class="info">
+	There's no <%= human_name.downcase.pluralize %> added yet
+</div>
+<%% end %>
+
+<div id="actions">
+	<%%= link_to 'New <%= human_name.downcase %>', new_<%= singular_table_name %>_path %>
+</div>

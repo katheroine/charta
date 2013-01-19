@@ -11,3 +11,144 @@
  *= require_self
  *= require_tree .
  */
+
+*
+{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Sansation', 'Helvetica', sans-serif;
+	outline: none;
+}
+
+a
+{
+	color: #006b84;
+	text-decoration: none;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+body
+{
+	position: relative;
+	background-color: #0e0e0e;
+	background-image: url('noise.png');
+	color: #2c535b;
+}
+
+.container
+{
+	width: 900px;
+	margin: auto;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+#banner 
+{
+	min-width: 980px;
+	background-color: #111111;
+	background-image: url('noise.png');
+}
+
+#banner .container
+{
+	position: relative;
+	min-height: 150px;
+}
+
+#banner div#logo
+{
+	position: absolute;
+	bottom: 0;
+	width: 403px;
+	height: 113px;
+}
+
+#banner div#logo a
+{
+	display: block;
+	position: relative;
+	top: 2px;
+	left: 10px;
+	width: 403px;
+	height: 113px;
+	background-image: url('charta_logo.png');
+}
+
+#banner div#cart
+{
+	width: 280px;
+	margin-left: 610px;
+	padding: 5px;
+	border-radius: 0 0 10px 10px;
+	background-color: #1f4751;
+}
+
+#menu
+{
+	position: relative;
+	z-index: 0;
+	height: 40px;
+	border-bottom: solid 4px #bbbbbb;
+	background-color: #cccccc;
+	background-image: url('noise.png');
+	text-align: right;
+}
+
+#menu a
+{
+	display: inline-block;
+	height: 28px;
+	margin: 0;
+	padding: 6px 10px;
+	border-bottom: solid 4px #bbbbbb;
+	background-image: url('noise.png');
+	text-decoration: none;
+	font-size: 25px;
+	color: #1f1f1f;
+}
+
+#menu a:hover
+{
+	border-bottom: solid 4px #1f1f1f;
+	background-color: #bbbbbb;
+	//color: #cccccc;
+}
+
+#main
+{
+	min-width: 980px;
+	padding: 10px 0;
+	background-color: #eeeeee;
+	background-image: url('noise.png');
+}
+
+#dashboard
+{
+	//margin-top: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: right;
+	background-color: #0e0e0e;
+	background-image: url('noise.png');
+	color: #aaaaaa;
+}
+
+#dashboard a
+{
+	color: #ffffff;
+}
+
+#dashboard a:hover
+{
+	text-decoration: underline;
+}
+
+.clear
+{
+	clear: both;
+}

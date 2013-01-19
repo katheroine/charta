@@ -1,6 +1,10 @@
-<h1>Editing admin</h1>
+<div id="header">
+	<h1>Editing admin</h1>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', admin_admin_path(@admin) %> |
-<%= link_to 'Back', admin_admins_path %>
+<div id="actions">
+	<%= link_to 'Show', admin_admin_path(@admin) %>
+	<%= link_to 'Admins list', admin_admins_path %>
+</div>

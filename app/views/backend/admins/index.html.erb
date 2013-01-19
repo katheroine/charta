@@ -1,37 +1,36 @@
-<h1>Listing admins</h1>
+<div id="header">
+	<h1>Listing admins</h1>
+</div>
 
-<table>
-  <tr>
-    <th>Login</th>
-    <th>Email</th>
-    <th>Hashed password</th>
-    <th>Salt</th>
-    <th>Is root</th>
-    <th>Name</th>
-    <th>Surname</th>
-    <th>Bio</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @admins.each do |admin| %>
-  <tr>
-    <td><%= admin.login %></td>
-    <td><%= admin.email %></td>
-    <td><%= admin.hashed_password %></td>
-    <td><%= admin.salt %></td>
-    <td><%= admin.is_root %></td>
-    <td><%= admin.name %></td>
-    <td><%= admin.surname %></td>
-    <td><%= admin.bio %></td>
-    <td><%= link_to 'Show', admin_admin_path(admin) %></td>
-    <td><%= link_to 'Edit', edit_admin_admin_path(admin) %></td>
-    <td><%= link_to 'Destroy', admin_admin_path(admin), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<% unless @admins.empty? then %>
+<table class="elements_list">
+  <thead>
+    <tr>
+      <th>Login</th>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+		<%= content_tag_for(:tr, @admins) do |admin| %>
+      <td><%= admin.login %></td>
+      <td><%= admin.email %></td>
+      <td><%= admin.name %></td>
+      <td><%= admin.surname %></td>
+			<td class="controls">
+				<%= link_to 'Show', admin_admin_path(admin) %><%= link_to 'Edit', edit_admin_admin_path(admin) %><%= link_to 'Destroy', admin_admin_path(admin), method: :delete, data: { confirm: 'Are you sure?' } %>
+			</td>
+		<% end %>
+  </tbody>
 </table>
+<% else %>
+<div class="info">
+	There's no admins added yet
+</div>
+<% end %>
 
-<br />
-
-<%= link_to 'New Admin', new_admin_admin_path %>
+<div id="actions">
+	<%= link_to 'New admin', new_admin_admin_path %>
+</div>

@@ -1,5 +1,8 @@
 Charta::Application.routes.draw do
 
+  resources :admins
+
+
   scope :module => "frontend" do
   end
   
