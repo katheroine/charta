@@ -4,15 +4,12 @@
 
 .presentation div.element_field.bio
 {
-	height: 176px;
-}
-.presentation div.element_field div.content.bio
-{
-	height: 164px;
+	height: 73px;
 }
 
-.presentation div.element_field textarea.content.bio
+.presentation div.element_field.bio .content
 {
-	height: 164px;
+	height: 51px;
 	resize: none;
+	overflow: auto;
 }

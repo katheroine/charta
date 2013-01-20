@@ -19,15 +19,19 @@
 			<%= f.label :email, :class => "name" %><%= f.text_field :email, :class => "content" %>
 		</div>
 		<div class="element_field">
+			<%= f.label :password, :class => "name" %><%= f.password_field :password, :class => "content" %>
+			<%= f.label :password_confirmation, 'Confirmation', :class => "name confirmation" %><%= f.password_field :password_confirmation, :class => "content confirmation" %>
+		</div>
+	</div>
+	<div class="right">
+		<div class="element_field">
 			<%= f.label :name, :class => "name" %><%= f.text_field :name, :class => "content" %>
 		</div>
 		<div class="element_field">
 			<%= f.label :surname, :class => "name" %><%= f.text_field :surname, :class => "content" %>
 		</div>
-	</div>
-	<div class="right">
 		<div class="element_field bio">
-			<%= f.label :bio, :class => "name" %><%= f.text_area :bio, :class => "content bio" %>
+			<%= f.label :bio, :class => "name" %><%= f.text_area :bio, :class => "content" %>
 		</div>
 	</div>
 	<div class="center">

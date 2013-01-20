@@ -282,7 +282,7 @@ table.elements_list td.controls a:hover
 {
 	width: 690px;
 	margin: 10px 0;
-	padding: 5px;
+	//padding: 5px;
 	border-radius: 10px;
 	background-color: #666666;
 }
@@ -290,7 +290,7 @@ table.elements_list td.controls a:hover
 .presentation div.left div.element_field,
 .presentation div.right div.element_field
 {
-	width: 425px;
+	width: 435px;
 }
 
 .presentation div.element_field .field_with_errors
@@ -298,16 +298,37 @@ table.elements_list td.controls a:hover
 	display: inline;
 }
 
+textarea
+{
+	background-color: red;
+}
+
+.presentation div.element_field label,
+.presentation div.element_field input[type="text"],
+.presentation div.element_field input[type="password"],
+.presentation div.element_field textarea
+{
+
+}
+
+.presentation div.element_field label.confirmation,
+.presentation div.element_field input[type="password"].confirmation
+{
+	margin-top: 0px;
+	//background-color: red;
+}
+
 .presentation div.element_field .name,
 .presentation div.element_field .content
 {
 	display: inline-block;
+	margin: 5px;
 }
 
 .presentation div.element_field .name
 {
 	width: 250px;
-	margin: 5px 10px;
+	padding: 5px 0;
 	text-align: right;
 	vertical-align: top;
 	font-size: 16px;
@@ -317,13 +338,13 @@ table.elements_list td.controls a:hover
 .presentation div.left div.element_field .name,
 .presentation div.right div.element_field .name
 {
-	width: 175px;
+	width: 185px;
 }
 
 .presentation div.element_field .content
 {
 	width: 404px;
-	margin: 0;
+	//margin: 0;
 	padding: 3px 5px;
 	border: solid 3px;
 	border-radius: 5px;
