@@ -1,7 +1,6 @@
 <% if @admin.errors.any? %>
 <div id="error_explanation">
 	<h2><%= pluralize(@admin.errors.count, "error") %> prohibited this admin from being saved:</h2>
-
 	<ul>
 	<% @admin.errors.full_messages.each do |msg| %>
 		<li><%= msg %></li>
@@ -19,7 +18,7 @@
 			<%= f.label :email, :class => "name" %><%= f.text_field :email, :class => "content" %>
 		</div>
 		<div class="element_field">
-			<%= f.label :password, :class => "name" %><%= f.password_field :password, :class => "content" %>
+			<%= f.label :password, :class => "name" %><%= f.password_field :password, :class => "content"%>
 			<%= f.label :password_confirmation, 'Confirmation', :class => "name confirmation" %><%= f.password_field :password_confirmation, :class => "content confirmation" %>
 		</div>
 	</div>

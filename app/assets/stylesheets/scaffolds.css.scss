@@ -68,13 +68,17 @@ div#warning
 
 #error_explanation
 {
-	width: 670px;
-	margin: 30px 0;
+	margin: 20px 0;
 	padding: 15px;
 	border-radius: 10px;
 	background-color: #bb221c;
 	color: #ffffff;
 	font-size: 14px;
+}
+
+#error_explanation.element
+{
+	width: 670px;
 }
 
 #error_explanation h2
