@@ -1,0 +1,43 @@
+<div id="header">
+  <h1>Company view</h1>
+</div>
+
+<% if notice then %>
+<div id="notice" class="element">
+	<%= notice %>
+</div>
+<% end %>
+
+<div class="presentation">
+	<div class="element_field">
+	  <div class="name">Name</div><div class="content"><%= @company.name %></div>
+	</div>
+	<div class="element_field">
+	  <div class="name">Description</div><div class="content"><%= @company.description %></div>
+	</div>
+	<div class="element_field">
+	  <div class="name">Services</div><div class="content"><%= @company.services %></div>
+	</div>
+	<div class="element_field">
+	  <div class="name">City</div><div class="content"><%= @company.city %></div>
+	</div>
+	<div class="element_field">
+	  <div class="name">Street</div><div class="content"><%= @company.street %></div>
+	</div>
+	<div class="element_field">
+	  <div class="name">Apartment</div><div class="content"><%= @company.apartment %></div>
+	</div>
+	<div class="element_field">
+	  <div class="name">Telephone</div><div class="content"><%= @company.telephone %></div>
+	</div>
+	<div class="element_field">
+	  <div class="name">Fax</div><div class="content"><%= @company.fax %></div>
+	</div>
+	<div class="element_field">
+	  <div class="name">Email</div><div class="content"><%= @company.email %></div>
+	</div>
+	
+	<div class="controls">
+		<%= link_to 'Edit', '/admin/company/edit', :class => "action" %>
+	</div>
+</div>

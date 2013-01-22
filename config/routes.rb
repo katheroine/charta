@@ -1,15 +1,16 @@
 Charta::Application.routes.draw do
 
-  resources :admins
-
-
   scope :module => "frontend" do
   end
   
   namespace :admin, :module => "backend" do
     resources :admins
+    post "/admin/company" => "company#update"
+    resource :company, :controller => "company"
+    get "/admin/comapny" => "comapny#show"
+    #get "/company/edit" => "company#edit"
+    
   end
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

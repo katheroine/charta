@@ -9,7 +9,7 @@
 </div>
 <% end %>
 
-<%= form_for([:admin, @admin], :html => { :class => "presentation" } ) do |f| %>
+<%= form_for([:admin, @admin], :action => '/admin', :html => { :class => "presentation" } ) do |f| %>
 	<div class="left">
 		<div class="element_field">
 			<%= f.label :login, :class => "name" %><%= f.text_field :login, :class => "content" %>
