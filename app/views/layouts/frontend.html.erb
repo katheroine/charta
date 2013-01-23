@@ -9,7 +9,27 @@
   <%= javascript_include_tag "frontend/application" %>
   <%= csrf_meta_tags %>
 </head>
-<body bgcolor="#E6E6FA">
-	<%= yield %>
+<body id="public">
+	
+	<div id="banner">
+    <div class="container">
+			<% if @current_cart %>
+				<%= hidden_div_if(@current_cart.line_items.empty?, :id => "cart") do %>
+					<%= render @current_cart %>
+				<% end %>
+			<% end %>
+			<div id="logo"><a href=""></a></div>
+    </div>
+  </div>
+  
+
+
+  <div id="dashboard">
+    <div class="container">
+      charta<br>
+      project: <a href="mailto:katheroine@gmail.com">katheroine</a>
+    </div>
+  </div>
+
 </body>
 </html>

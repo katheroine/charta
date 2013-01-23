@@ -1,6 +1,7 @@
 Charta::Application.routes.draw do
 
   scope :module => "frontend" do
+    get "company/index" => "company#index"
   end
   
   namespace :admin, :module => "backend" do
