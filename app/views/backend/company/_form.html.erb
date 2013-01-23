@@ -1,5 +1,5 @@
 <% if @company.errors.any? %>
-<div id="error_explanation" class="element">
+<div id="error_explanation">
 	<h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
 
 	<ul>
@@ -11,34 +11,40 @@
 <% end %>
 
 <%= form_for([:admin, @company], :url => '/admin/company', :html => { :class => "presentation" } ) do |f| %>
-	<div class="element_field">
-		<%= f.label :name, :class => "name" %><%= f.text_field :name, :class => "content" %>
+	<div class="left">
+		<div class="element_field">
+			<%= f.label :name, :class => "name" %><%= f.text_field :name, :class => "content" %>
+		</div>
+		<div class="element_field company_description">
+			<%= f.label :description, :class => "name" %><%= f.text_area :description, :class => "content" %>
+		</div>
+		<div class="element_field company_services">
+			<%= f.label :services, :class => "name" %><%= f.text_area :services, :class => "content" %>
+		</div>
 	</div>
-	<div class="element_field">
-		<%= f.label :description, :class => "name" %><%= f.text_area :description, :class => "content" %>
+	<div class="right">
+		<div class="element_field">
+			<%= f.label :city, :class => "name" %><%= f.text_field :city, :class => "content" %>
+		</div>
+		<div class="element_field">
+			<%= f.label :street, :class => "name" %><%= f.text_field :street, :class => "content" %>
+		</div>
+		<div class="element_field">
+			<%= f.label :apartment, :class => "name" %><%= f.text_field :apartment, :class => "content" %>
+		</div>
+		<div class="element_field">
+			<%= f.label :telephone, :class => "name" %><%= f.text_field :telephone, :class => "content" %>
+		</div>
+		<div class="element_field">
+			<%= f.label :fax, :class => "name" %><%= f.text_field :fax, :class => "content" %>
+		</div>
+		<div class="element_field">
+			<%= f.label :email, :class => "name" %><%= f.text_field :email, :class => "content" %>
+		</div>
 	</div>
-	<div class="element_field">
-		<%= f.label :services, :class => "name" %><%= f.text_area :services, :class => "content" %>
-	</div>
-	<div class="element_field">
-		<%= f.label :city, :class => "name" %><%= f.text_field :city, :class => "content" %>
-	</div>
-	<div class="element_field">
-		<%= f.label :street, :class => "name" %><%= f.text_field :street, :class => "content" %>
-	</div>
-	<div class="element_field">
-		<%= f.label :apartment, :class => "name" %><%= f.text_field :apartment, :class => "content" %>
-	</div>
-	<div class="element_field">
-		<%= f.label :telephone, :class => "name" %><%= f.text_field :telephone, :class => "content" %>
-	</div>
-	<div class="element_field">
-		<%= f.label :fax, :class => "name" %><%= f.text_field :fax, :class => "content" %>
-	</div>
-	<div class="element_field">
-		<%= f.label :email, :class => "name" %><%= f.text_field :email, :class => "content" %>
-	</div>
-	<div class="controls">
-	    <%= f.submit :class => "action" %>
+	<div class="center">
+		<div class="controls">
+		    <%= f.submit :class => "action" %>
+		</div>
 	</div>
 <% end %>
