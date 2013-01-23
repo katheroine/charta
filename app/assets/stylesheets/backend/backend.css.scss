@@ -70,8 +70,8 @@ body
 {
 	position: absolute;
 	bottom: 0;
-	width: 403px;
-	height: 113px;
+	width: 402px;
+	height: 112px;
 }
 
 #banner div#logo a
@@ -80,9 +80,10 @@ body
 	position: relative;
 	top: 2px;
 	left: 10px;
-	width: 403px;
+	width: 402px;
 	height: 113px;
 	background-image: url('../charta_logo.png');
+	background-repeat: no-repeat;
 }
 
 #banner div#cart
@@ -99,7 +100,7 @@ body
 	position: relative;
 	z-index: 0;
 	height: 40px;
-	border-bottom: solid 4px #bbbbbb;
+	border-bottom: solid 2px #bbbbbb;
 	background-color: #cccccc;
 	background-image: url('../noise.png');
 	text-align: right;
@@ -111,7 +112,7 @@ body
 	height: 28px;
 	margin: 0;
 	padding: 6px 10px;
-	border-bottom: solid 4px #bbbbbb;
+	border-bottom: solid 2px #bbbbbb;
 	background-image: url('../noise.png');
 	text-decoration: none;
 	font-size: 25px;
@@ -120,7 +121,7 @@ body
 
 #menu a:hover
 {
-	border-bottom: solid 4px #1f1f1f;
+	border-bottom: solid 2px #1f1f1f;
 	background-color: #bbbbbb;
 }
 

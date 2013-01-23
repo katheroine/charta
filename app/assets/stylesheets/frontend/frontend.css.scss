@@ -11,3 +11,143 @@
  *= require_self
  *= require_tree .
  */
+
+*
+{
+	margin: 0px;
+	padding: 0px;
+	outline: none;
+	font-family: 'Sansation', 'Helvetica', sans-serif;
+}
+
+.clear
+{
+	clear: both;
+}
+
+a
+{
+	color: #006b84;
+	text-decoration: none;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+body
+{
+	position: relative;
+	background-color: #111111;
+	background-image: url('../noise.png');
+	color: #cccccc;
+}
+
+.container
+{
+	width: 900px;
+	margin: auto;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+#banner 
+{
+	min-width: 980px;
+	background-color: #111111;
+	background-image: url('../noise.png');
+}
+
+#banner .container
+{
+	position: relative;
+	min-height: 150px;
+}
+
+#banner div#logo
+{
+	position: absolute;
+	bottom: 0;
+	width: 402px;
+	height: 112px;
+}
+
+#banner div#logo a
+{
+	display: block;
+	position: relative;
+	top: 2px;
+	left: 10px;
+	width: 402px;
+	height: 113px;
+	background-image: url('../charta_logo.png');
+	background-repeat: no-repeat;
+}
+
+#banner div#cart
+{
+	width: 280px;
+	margin-left: 610px;
+	padding: 5px;
+	border-radius: 0 0 10px 10px;
+	background-color: #1f4751;
+}
+
+#menu
+{
+	position: relative;
+	z-index: 0;
+	height: 40px;
+	border-bottom: solid 2px #bbbbbb;
+	//background-color: #cccccc;
+	//background-image: url('../noise.png');
+	text-align: right;
+}
+
+#menu a
+{
+	display: inline-block;
+	height: 28px;
+	margin: 0;
+	padding: 6px 10px;
+	border-bottom: solid 2px #bbbbbb;
+	//background-image: url('../noise.png');
+	text-decoration: none;
+	font-size: 25px;
+	color: #cccccc;
+}
+
+#menu a:hover
+{
+	border-bottom: solid 2px #333333;
+	background-color: #000000;
+}
+
+#main
+{
+	min-width: 980px;
+	padding: 10px 0;
+	//background-color: #eeeeee;
+	//background-image: url('../noise.png');
+}
+
+#dashboard
+{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: right;
+	background-color: #111111;
+	background-image: url('../noise.png');
+	color: #aaaaaa;
+}
+
+#dashboard a
+{
+	color: #ffffff;
+}
+
+#dashboard a:hover
+{
+	text-decoration: underline;
+}
