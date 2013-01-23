@@ -2,16 +2,13 @@
 <html>
 <head>
   <title>Charta</title>
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= stylesheet_link_tag "frontend/application", :media => "all" %>
-  <%= stylesheet_link_tag "frontend/scaffolds", :media => "all" %>
+  <%= stylesheet_link_tag "frontend/frontend", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag "frontend/application" %>
   <%= csrf_meta_tags %>
 </head>
-<body id="public">
-	
-	<div id="banner">
+<body>
+
+  <div id="banner">
     <div class="container">
 			<% if @current_cart %>
 				<%= hidden_div_if(@current_cart.line_items.empty?, :id => "cart") do %>
@@ -22,7 +19,17 @@
     </div>
   </div>
   
+  <div id="menu">
+    <div class="container">
+      <a href="">company</a><a href="">staff</a><a href="">projets</a><a href="">administrators</a>
+    </div>
+  </div>
 
+  <div id="main">
+    <div class="container">
+      <%= yield %>
+    </div>
+  </div>
 
   <div id="dashboard">
     <div class="container">
@@ -30,6 +37,6 @@
       project: <a href="mailto:katheroine@gmail.com">katheroine</a>
     </div>
   </div>
-
+  
 </body>
 </html>
