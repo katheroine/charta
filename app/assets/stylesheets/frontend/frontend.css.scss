@@ -55,8 +55,8 @@ body
 #banner 
 {
 	min-width: 980px;
-	background-color: #111111;
-	background-image: url('../noise.png');
+	//background-color: #111111;
+	//background-image: url('../noise.png');
 }
 
 #banner .container
@@ -78,20 +78,11 @@ body
 	display: block;
 	position: relative;
 	top: 2px;
-	left: 10px;
+	left: 9px;
 	width: 402px;
 	height: 113px;
 	background-image: url('../charta_logo.png');
 	background-repeat: no-repeat;
-}
-
-#banner div#cart
-{
-	width: 280px;
-	margin-left: 610px;
-	padding: 5px;
-	border-radius: 0 0 10px 10px;
-	background-color: #1f4751;
 }
 
 #menu
@@ -99,19 +90,29 @@ body
 	position: relative;
 	z-index: 0;
 	height: 40px;
-	border-bottom: solid 2px #bbbbbb;
+	border-top: solid 2px #bbbbbb;
 	//background-color: #cccccc;
 	//background-image: url('../noise.png');
 	text-align: right;
 }
 
+#menu .container
+{
+	background-image: url('../scaffold_connectors.png');
+	background-position: top left;
+	background-repeat: no-repeat;
+	//background-color: red;
+}
+
 #menu a
 {
+	position: relative;
+	bottom: 2px;
 	display: inline-block;
-	height: 28px;
+	height: 30px;
 	margin: 0;
 	padding: 6px 10px;
-	border-bottom: solid 2px #bbbbbb;
+	border-top: solid 2px #bbbbbb;
 	//background-image: url('../noise.png');
 	text-decoration: none;
 	font-size: 25px;
@@ -120,16 +121,26 @@ body
 
 #menu a:hover
 {
-	border-bottom: solid 2px #333333;
+	border-top: solid 2px #333333;
 	background-color: #000000;
+	background-image: url('../noise.png');
 }
 
 #main
 {
 	min-width: 980px;
-	padding: 10px 0;
 	//background-color: #eeeeee;
-	//background-image: url('../noise.png');
+}
+
+#main .container
+{
+	min-height: 700px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-image: url('../scaffold.png');
+	background-position: top left;
+	background-repeat: no-repeat;
+	//background-color: black;
 }
 
 #dashboard
@@ -137,8 +148,8 @@ body
 	padding-top: 20px;
 	padding-bottom: 20px;
 	text-align: right;
-	background-color: #111111;
-	background-image: url('../noise.png');
+	//background-color: #111111;
+	//background-image: url('../noise.png');
 	color: #aaaaaa;
 }
 

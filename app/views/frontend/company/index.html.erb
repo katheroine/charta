@@ -1,2 +1,19 @@
-<h1>Company#index</h1>
-<p>Find me in app/views/company/index.html.erb</p>
+<div id="company">
+	<div id="description"><%= @company.description %></div>
+	<div id="services">
+		<div class="title">Our services</div>
+		<ul>
+			<% @company.services.split(", ").each do |service| %>
+				<li><%= service %></li>
+			<% end %>
+		</ul>
+	</div>
+	<div id="contact">
+		<div class="title">Contact us</div>
+		<p><%= @company.street %> <%= @company.apartment %></p>
+		<p><%= @company.city %></p>
+		<p>tel. <%= @company.telephone %></p>
+		<p>fax. <%= @company.fax %></p>
+		<p>e-mail: <%= @company.email %></p>
+	</div>
+</div>

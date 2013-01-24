@@ -1,3 +1,49 @@
 // Place all the styles related to the company controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div#company
+{
+	margin: 170px 0 0 430px;
+	//background-color: black;
+}
+
+div#company .title
+{
+	text-indent: 30px;
+	font-size: 30px;
+}
+
+div#company #description
+{
+	margin: 20px 0;
+	text-indent: 30px;
+	font-size: 20px;
+}
+
+div#company #services .title
+{
+	margin: 20px 0;
+}
+
+div#company #services ul
+{
+	margin: 20px 0;
+	list-style-position: inside;
+	list-style-type: disc;
+}
+
+div#company #contact
+{
+	margin: 40px 0;
+	padding: 20px 30px;
+	border-radius: 50px;
+	background-color: #cccccc;
+	color: #111111;
+	font-size: 15px;
+}
+
+div#company #contact p
+{
+	margin: 10px 0;
+}
