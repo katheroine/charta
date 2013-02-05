@@ -1,0 +1,48 @@
+<div id="header">
+  <h1>Project view</h1>
+</div>
+
+<% if notice then %>
+<div id="notice" class="element">
+	<%= notice %>
+</div>
+<% end %>
+
+<div class="presentation">
+	<div class="element_field">
+	  <div class="name">Name</div><div class="content"><%= @project.name %></div>
+	</div>
+	<div class="element_field">
+	  <div class="name">Completion date</div><div class="content"><%= @project.completion_date %></div>
+	</div>
+	<div class="element_field">
+	  <div class="name">Localization</div><div class="content"><%= @project.localization %></div>
+	</div>
+	<div class="element_field">
+	  <div class="name">Rooms number</div><div class="content"><%= @project.rooms_number %></div>
+	</div>
+	<div class="element_field">
+	  <div class="name">Surface area</div><div class="content"><%= @project.surface_area %></div>
+	</div>
+	<div class="element_field">
+	  <div class="name">State</div><div class="content"><%= @project.state %></div>
+	</div>
+	<div class="element_field">
+	  <div class="name">Project img path</div><div class="content"><%= @project.project_img_path %></div>
+	</div>
+	<div class="element_field">
+	  <div class="name">Construction img path</div><div class="content"><%= @project.construction_img_path %></div>
+	</div>
+	<div class="element_field">
+	  <div class="name">Result img path</div><div class="content"><%= @project.result_img_path %></div>
+	</div>
+	
+	<div class="controls">
+		<%= link_to 'Edit', edit_admin_project_path(@project), :class => "action" %>
+		<%= link_to 'Destroy', admin_project_path(@project), method: :delete, data: { confirm: 'Are you sure?' }, :class => "action" %>
+	</div>
+</div>
+
+<div id="actions">
+	<%= link_to 'Projects list', admin_projects_path %>
+</div>

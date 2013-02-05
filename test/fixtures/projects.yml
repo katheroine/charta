@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  completion_date: 2013-02-05 08:30:21
+  localization: MyString
+  rooms_number: 1
+  surface_area: 1
+  state: MyString
+  project_img_path: MyString
+  construction_img_path: MyString
+  result_img_path: MyString
+
+two:
+  name: MyString
+  completion_date: 2013-02-05 08:30:21
+  localization: MyString
+  rooms_number: 1
+  surface_area: 1
+  state: MyString
+  project_img_path: MyString
+  construction_img_path: MyString
+  result_img_path: MyString

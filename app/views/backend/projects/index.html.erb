@@ -1,0 +1,40 @@
+<div id="header">
+	<h1>Listing projects</h1>
+</div>
+
+<% unless @projects.empty? then %>
+<table class="elements_list">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Completion date</th>
+      <th>Localization</th>
+      <th>Rooms number</th>
+      <th>Surface area</th>
+      <th>State</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+		<%= content_tag_for(:tr, @projects) do |project| %>
+      <td><%= project.name %></td>
+      <td><%= project.completion_date.to_date %></td>
+      <td><%= project.localization %></td>
+      <td><%= project.rooms_number %></td>
+      <td><%= project.surface_area %></td>
+      <td><%= project.state %></td>
+			<td class="controls">
+				<%= link_to 'Show', admin_project_path(project) %><%= link_to 'Edit', edit_admin_project_path(project) %><%= link_to 'Destroy', admin_project_path(project), method: :delete, data: { confirm: 'Are you sure?' } %>
+			</td>
+		<% end %>
+  </tbody>
+</table>
+<% else %>
+<div class="info">
+	There's no projects added yet
+</div>
+<% end %>
+
+<div id="actions">
+	<%= link_to 'New project', new_admin_project_path %>
+</div>

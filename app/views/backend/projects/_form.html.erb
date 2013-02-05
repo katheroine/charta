@@ -1,0 +1,44 @@
+<% if @project.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+	<ul>
+	<% @project.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+	<% end %>
+	</ul>
+</div>
+<% end %>
+
+<%= form_for([:admin, @project], :action => '/admin', :html => { :class => "presentation" } ) do |f| %>
+	<div class="element_field">
+		<%= f.label :name, :class => "name" %><%= f.text_field :name, :class => "content" %>
+	</div>
+	<div class="element_field">
+		<%= f.label :completion_date, :class => "name" %><div class="content select"><%= f.datetime_select :completion_date %></div>
+	</div>
+	<div class="element_field">
+		<%= f.label :localization, :class => "name" %><%= f.text_field :localization, :class => "content" %>
+	</div>
+	<div class="element_field">
+		<%= f.label :rooms_number, :class => "name" %><%= f.number_field :rooms_number, :class => "content" %>
+	</div>
+	<div class="element_field">
+		<%= f.label :surface_area, :class => "name" %><%= f.number_field :surface_area, :class => "content" %>
+	</div>
+	<div class="element_field">
+		<%= f.label :state, :class => "name" %><%= f.text_field :state, :class => "content" %>
+	</div>
+	<div class="element_field">
+		<%= f.label :project_img_path, "Project image path", :class => "name" %><%= f.text_field :project_img_path, :class => "content" %>
+	</div>
+	<div class="element_field">
+		<%= f.label :construction_img_path, "Construction image path", :class => "name" %><%= f.text_field :construction_img_path, :class => "content" %>
+	</div>
+	<div class="element_field">
+		<%= f.label :result_img_path, "Result image path", :class => "name" %><%= f.text_field :result_img_path, :class => "content" %>
+	</div>
+	<div class="controls">
+	    <%= f.submit :class => "action" %>
+	</div>
+<% end %>

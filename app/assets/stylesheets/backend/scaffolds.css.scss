@@ -296,12 +296,12 @@ textarea
 .presentation div.element_field .content
 {
 	display: inline-block;
-	margin: 5px;
 }
 
 .presentation div.element_field .name
 {
 	width: 250px;
+	margin: 5px;
 	padding: 5px 0;
 	text-align: right;
 	vertical-align: top;
@@ -318,6 +318,7 @@ textarea
 .presentation div.element_field .content
 {
 	width: 414px;
+	margin: 5px 5px 0 5px;
 	padding: 3px 5px;
 	border: solid 3px;
 	border-radius: 5px;
@@ -336,9 +337,14 @@ textarea
 	width: 420px;
 }
 
+.presentation div.element_field .content.select
+{
+	padding: 2px 5px; 
+}
+
 div.presentation div.element_field .content
 {
-	min-height: 14px;
+	min-height: 16px;
 	border-color: #eeeeee;
 	background-color: #eeeeee;
 }

@@ -6,11 +6,10 @@ Charta::Application.routes.draw do
   
   namespace :admin, :module => "backend" do
     resources :admins
-    post "/admin/company" => "company#update"
     resource :company, :controller => "company"
     get "/admin/comapny" => "comapny#show"
-    #get "/company/edit" => "company#edit"
-    
+    post "/admin/company" => "company#update"
+    resources :projects
   end
 
   # The priority is based upon order of creation:
