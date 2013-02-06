@@ -7,10 +7,13 @@
   <thead>
     <tr>
       <th>Name</th>
+      <!--
       <th>Completion date</th>
       <th>Localization</th>
       <th>Rooms number</th>
       <th>Surface area</th>
+      -->
+      <th>Photo</th>
       <th>State</th>
       <th></th>
     </tr>
@@ -18,10 +21,13 @@
   <tbody>
 		<%= content_tag_for(:tr, @projects) do |project| %>
       <td><%= project.name %></td>
+      <!--
       <td><%= project.completion_date.to_date %></td>
       <td><%= project.localization %></td>
       <td><%= project.rooms_number %></td>
       <td><%= project.surface_area %></td>
+      -->
+      <td><%= image_tag project.project_img.url(:thumb) %></td>
       <td><%= project.state %></td>
 			<td class="controls">
 				<%= link_to 'Show', admin_project_path(project) %><%= link_to 'Edit', edit_admin_project_path(project) %><%= link_to 'Destroy', admin_project_path(project), method: :delete, data: { confirm: 'Are you sure?' } %>

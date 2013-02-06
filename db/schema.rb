@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130205073020) do
+ActiveRecord::Schema.define(:version => 20130206113726) do
 
   create_table "admins", :force => true do |t|
     t.string   "login"
@@ -47,11 +47,17 @@ ActiveRecord::Schema.define(:version => 20130205073020) do
     t.integer  "rooms_number"
     t.integer  "surface_area"
     t.string   "state"
-    t.string   "project_img_path"
-    t.string   "construction_img_path"
-    t.string   "result_img_path"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.string   "project_img_file_name"
+    t.string   "project_img_content_type"
+    t.integer  "project_img_file_size"
+    t.string   "construction_img_file_name"
+    t.string   "construction_img_content_type"
+    t.integer  "construction_img_file_size"
+    t.string   "result_img_file_name"
+    t.string   "result_img_content_type"
+    t.integer  "result_img_file_size"
   end
 
 end

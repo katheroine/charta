@@ -199,7 +199,8 @@ table.elements_list td dd
 
 table.elements_list td img
 {
-	width: 200px;
+	display: block;
+	margin: auto;
 	border-radius: 3px;
 }
 
@@ -340,6 +341,21 @@ textarea
 .presentation div.element_field .content.select
 {
 	padding: 2px 5px; 
+}
+
+.presentation div.element_field .content.file
+{
+	padding: 0px 5px;
+}
+
+.presentation div.element_field img.content
+{
+	display: inline-block;
+	width: 430px;
+	height: 150px;
+	border-width: 0px;
+	border-radius: 5px;
+	padding: 0px;
 }
 
 div.presentation div.element_field .content

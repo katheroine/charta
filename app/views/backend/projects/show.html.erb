@@ -28,13 +28,13 @@
 	  <div class="name">State</div><div class="content"><%= @project.state %></div>
 	</div>
 	<div class="element_field">
-	  <div class="name">Project img path</div><div class="content"><%= @project.project_img_path %></div>
+	  <div class="name">Project image</div><%= image_tag @project.project_img.url(:small), :class => "content image" %>
 	</div>
 	<div class="element_field">
-	  <div class="name">Construction img path</div><div class="content"><%= @project.construction_img_path %></div>
+	  <div class="name">Construction image</div><%= image_tag @project.construction_img.url(:small), :class => "content image" %>
 	</div>
 	<div class="element_field">
-	  <div class="name">Result img path</div><div class="content"><%= @project.result_img_path %></div>
+	  <div class="name">Result image</div><%= image_tag @project.result_img.url(:small), :class => "content image" %>
 	</div>
 	
 	<div class="controls">

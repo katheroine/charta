@@ -10,7 +10,7 @@
 </div>
 <% end %>
 
-<%= form_for([:admin, @project], :action => '/admin', :html => { :class => "presentation" } ) do |f| %>
+<%= form_for([:admin, @project], :action => '/admin', :html => { :multipart => true, :class => "presentation" } ) do |f| %>
 	<div class="element_field">
 		<%= f.label :name, :class => "name" %><%= f.text_field :name, :class => "content" %>
 	</div>
@@ -30,13 +30,13 @@
 		<%= f.label :state, :class => "name" %><%= f.text_field :state, :class => "content" %>
 	</div>
 	<div class="element_field">
-		<%= f.label :project_img_path, "Project image path", :class => "name" %><%= f.text_field :project_img_path, :class => "content" %>
+		<%= f.label :project_img_path, "Project image", :class => "name" %><%= f.file_field :project_img, :class => "content file" %>
 	</div>
 	<div class="element_field">
-		<%= f.label :construction_img_path, "Construction image path", :class => "name" %><%= f.text_field :construction_img_path, :class => "content" %>
+		<%= f.label :construction_img_path, "Construction image", :class => "name" %><%= f.file_field :construction_img, :class => "content file" %>
 	</div>
 	<div class="element_field">
-		<%= f.label :result_img_path, "Result image path", :class => "name" %><%= f.text_field :result_img_path, :class => "content" %>
+		<%= f.label :result_img_path, "Result image", :class => "name" %><%= f.file_field :result_img, :class => "content file" %>
 	</div>
 	<div class="controls">
 	    <%= f.submit :class => "action" %>
