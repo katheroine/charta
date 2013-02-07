@@ -11,26 +11,30 @@
 <div class="presentation">
 	<div class="left">
 		<div class="element_field">
-		  <div class="name">Login</div><div class="content"><%= @account.login %></div>
+		  <div class="name">Login</div><div class="content"><%= @admin.login %></div>
 		</div>
 		<div class="element_field">
-		  <div class="name">Email</div><div class="content"><%= @account.email %></div>
+		  <div class="name">Email</div><div class="content"><%= @admin.email %></div>
 		</div>
 	</div>
 	<div class="right">
 		<div class="element_field">
-		  <div class="name">Name</div><div class="content"><%= @account.name %></div>
+		  <div class="name">Name</div><div class="content"><%= @admin.name %></div>
 		</div>
 		<div class="element_field">
-		  <div class="name">Surname</div><div class="content"><%= @account.surname %></div>
+		  <div class="name">Surname</div><div class="content"><%= @admin.surname %></div>
 		</div>
 		<div class="element_field admin_bio">
-		  <div class="name">Bio</div><div class="content"><%= @account.bio %></div>
+		  <div class="name">Bio</div><div class="content"><%= @admin.bio %></div>
 		</div>
 	</div>
 	<div class="center">
 		<div class="controls">
-			<%= link_to 'Edit', edit_admin_account_path(@account), :class => "action" %>
+			<%= link_to 'Edit', edit_admin_account_path(@admin), :class => "action" %>
 		</div>
 	</div>
+</div>
+
+<div id="actions">
+	<%= link_to 'Sign out', '/admin/sign_out' %>
 </div>

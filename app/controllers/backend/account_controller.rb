@@ -2,7 +2,7 @@ class Backend::AccountController < Backend::ApplicationController
 	# GET /admin/sign_in
 	def sign_in
 		if current_admin.signed_in? then
-			flash[:notice] = "You're signed in yet"
+			flash[:notice] = "You're signed in yet."
 			redirect_to '/admin/account'
 		end
 	end
@@ -11,9 +11,9 @@ class Backend::AccountController < Backend::ApplicationController
 	def sign_out
 		if current_admin.signed_in? then
 			current_admin.sign_out
-			flash[:notice] = "You've been logged out"
+			flash[:notice] = "You've been logged out."
 		else
-			flash[:notice] = "You haven't been signed in"
+			flash[:notice] = "You haven't been signed in."
 		end
 		redirect_to '/admin/sign_in'
 	end
@@ -25,45 +25,45 @@ class Backend::AccountController < Backend::ApplicationController
 			password = params[:password]
 			admin = current_admin.sign_in(login, password)
 			if admin
-				flash[:notice] = "You've been successfully logged in"
+				flash[:notice] = "You've been successfully logged in."
 				redirect_to '/admin/account'
 			else
-				flash[:notice] = "Wrong email or password"
+				flash[:notice] = "Wrong email or password."
 				redirect_to :action => :sign_in
 			end
 		else
-			flash[:notice] = "You're signed in yet"
+			flash[:notice] = "You're signed in yet."
 		end
 	end
 
   # GET /account/
   # GET /account.json
   def show
-    @account = Admin.find(current_admin.id)
+    @admin = Admin.find(current_admin.id)
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @account }
+      format.json { render json: @admin }
     end
   end
   
   # GET /account/edit
   def edit
-    @account = Admin.where(current_admin.id)
+    @admin = Admin.find(current_admin.id)
   end
 
   # PUT /account/
   # PUT /account.json
   def update
-    @account = Admin.where(current_admin.id)
+    @admin = Admin.find(current_admin.id)
 
     respond_to do |format|
-      if @account.update_attributes(params[:account])
-        format.html { redirect_to '/admin/', notice: 'Account was successfully updated.' }
+      if @admin.update_attributes(params[:admin])
+        format.html { redirect_to '/admin/account', notice: 'Account was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @account.errors, status: :unprocessable_entity }
+        format.json { render json: @admin.errors, status: :unprocessable_entity }
       end
     end
   end

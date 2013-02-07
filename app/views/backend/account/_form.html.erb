@@ -1,15 +1,15 @@
-<% if @account.errors.any? %>
+<% if @admin.errors.any? %>
 <div id="error_explanation">
-	<h2><%= pluralize(@accout.errors.count, "error") %> prohibited this account from being saved:</h2>
+	<h2><%= pluralize(@admin.errors.count, "error") %> prohibited this account from being saved:</h2>
 	<ul>
-	<% @account.errors.full_messages.each do |msg| %>
+	<% @admin.errors.full_messages.each do |msg| %>
 		<li><%= msg %></li>
 	<% end %>
 	</ul>
 </div>
 <% end %>
 
-<%= form_for([:admin, @account], :action => '/admin', :html => { :class => "presentation" } ) do |f| %>
+<%= form_for([:admin, @admin], :url => '/admin/account', :html => { :class => "presentation" } ) do |f| %>
 	<div class="left">
 		<div class="element_field">
 			<%= f.label :login, :class => "name" %><%= f.text_field :login, :class => "content" %>
@@ -35,7 +35,7 @@
 	</div>
 	<div class="center">
 		<div class="controls">
-		    <%= f.submit :class => "action" %>
+		    <%= f.submit 'Update Account', :class => "action" %>
 		</div>
 	</div>
 <% end %>

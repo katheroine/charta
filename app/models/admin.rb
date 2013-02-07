@@ -4,8 +4,8 @@ class Admin < ActiveRecord::Base
   attr_accessible :login, :email, :is_root, :name, :surname, :bio, :hashed_password, :salt, :password, :password_confirmation
   attr_reader :password
   
-  validates :password, :confirmation => :true
   validates :password, :login, :email, :presence => :true
+  validates :password, :confirmation => :true
   
   private
   
