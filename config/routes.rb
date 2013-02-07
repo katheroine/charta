@@ -7,6 +7,9 @@ Charta::Application.routes.draw do
   
   namespace :admin, :module => "backend" do
     resource :account, :controller => "account"
+		get "/sign_in" => "account#sign_in"
+		get "/sign_out" => "account#sign_out"
+    post "/authenticate" => "account#authenticate"
     resources :admins
     resource :company, :controller => "company"
     get "/admin/comapny" => "comapny#show"

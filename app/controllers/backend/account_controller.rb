@@ -1,6 +1,43 @@
 class Backend::AccountController < Backend::ApplicationController
-  # GET /company/
-  # GET /company.json
+	# GET /admin/sign_in
+	def sign_in
+		if current_admin.signed_in? then
+			flash[:notice] = "You're signed in yet"
+			redirect_to '/admin/account'
+		end
+	end
+	
+	# GET /admin/sign_out
+	def sign_out
+		if current_admin.signed_in? then
+			current_admin.sign_out
+			flash[:notice] = "You've been logged out"
+		else
+			flash[:notice] = "You haven't been signed in"
+		end
+		redirect_to '/admin/sign_in'
+	end
+	
+	# POST /admin/authenticate
+	def authenticate
+		unless current_admin.signed_in? then
+			login = params[:login]
+			password = params[:password]
+			admin = current_admin.sign_in(login, password)
+			if admin
+				flash[:notice] = "You've been successfully logged in"
+				redirect_to '/admin/account'
+			else
+				flash[:notice] = "Wrong email or password"
+				redirect_to :action => :sign_in
+			end
+		else
+			flash[:notice] = "You're signed in yet"
+		end
+	end
+
+  # GET /account/
+  # GET /account.json
   def show
     @account = Admin.find(current_admin.id)
 
@@ -10,13 +47,13 @@ class Backend::AccountController < Backend::ApplicationController
     end
   end
   
-  # GET /company/edit
+  # GET /account/edit
   def edit
     @account = Admin.where(current_admin.id)
   end
 
-  # PUT /company/
-  # PUT /company.json
+  # PUT /account/
+  # PUT /account.json
   def update
     @account = Admin.where(current_admin.id)
 

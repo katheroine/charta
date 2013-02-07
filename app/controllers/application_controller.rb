@@ -19,10 +19,10 @@ class CurrentAdmin
 		!@session[:admin_id]
 	end
 	
-	def sign_in(email, password)
-		admin = Admin.authenticate(email, password)
+	def sign_in(login, password)
+		admin = Admin.authenticate(login, password)
 		
-		if user
+		if admin
 			@session[:admin_id] = admin.id
 		else
 			nil
