@@ -1,0 +1,41 @@
+<% if @account.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@accout.errors.count, "error") %> prohibited this account from being saved:</h2>
+	<ul>
+	<% @account.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+	<% end %>
+	</ul>
+</div>
+<% end %>
+
+<%= form_for([:admin, @account], :action => '/admin', :html => { :class => "presentation" } ) do |f| %>
+	<div class="left">
+		<div class="element_field">
+			<%= f.label :login, :class => "name" %><%= f.text_field :login, :class => "content" %>
+		</div>
+		<div class="element_field">
+			<%= f.label :email, :class => "name" %><%= f.text_field :email, :class => "content" %>
+		</div>
+		<div class="element_field">
+			<%= f.label :password, :class => "name" %><%= f.password_field :password, :class => "content"%>
+			<%= f.label :password_confirmation, 'Confirmation', :class => "name confirmation" %><%= f.password_field :password_confirmation, :class => "content confirmation" %>
+		</div>
+	</div>
+	<div class="right">
+		<div class="element_field">
+			<%= f.label :name, :class => "name" %><%= f.text_field :name, :class => "content" %>
+		</div>
+		<div class="element_field">
+			<%= f.label :surname, :class => "name" %><%= f.text_field :surname, :class => "content" %>
+		</div>
+		<div class="element_field admin_bio">
+			<%= f.label :bio, :class => "name" %><%= f.text_area :bio, :class => "content" %>
+		</div>
+	</div>
+	<div class="center">
+		<div class="controls">
+		    <%= f.submit :class => "action" %>
+		</div>
+	</div>
+<% end %>

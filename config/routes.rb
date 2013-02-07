@@ -6,6 +6,7 @@ Charta::Application.routes.draw do
   end
   
   namespace :admin, :module => "backend" do
+    resource :account, :controller => "account"
     resources :admins
     resource :company, :controller => "company"
     get "/admin/comapny" => "comapny#show"
