@@ -4,8 +4,9 @@ class Admin < ActiveRecord::Base
   attr_accessible :login, :email, :is_root, :name, :surname, :bio, :hashed_password, :salt, :password, :password_confirmation
   attr_reader :password
   
-  validates :password, :login, :email, :presence => :true
-  validates :password, :confirmation => :true
+  validates :password, :presence => true, :confirmation => true, :length => { :within => 8..32 }, :on => :create
+  validates :password, :confirmation => true, :length => { :within => 8..32 }, :on => :update, :unless => lambda{ |admin| admin.password.blank? } 
+  validates :login, :email, :presence => :true
   
   private
   
