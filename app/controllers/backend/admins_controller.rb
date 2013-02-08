@@ -59,6 +59,7 @@ class Backend::AdminsController < Backend::ApplicationController
     @admin = Admin.find(params[:id])
 
     respond_to do |format|
+			params[:admin].delete(:password) if params[:admin][:password].blank?
       if @admin.update_attributes(params[:admin])
         format.html { redirect_to admin_admin_url(@admin), notice: 'Admin was successfully updated.' }
         format.json { head :no_content }

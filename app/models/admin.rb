@@ -21,9 +21,8 @@ class Admin < ActiveRecord::Base
   public
   
   def Admin.authenticate(login, password)
-    admin = Admin.find_by_login(login)
-    if admin.hashed_password == encrypt_password(password, admin.salt)
-      admin
+    if admin = Admin.find_by_login(login)
+      admin if admin.hashed_password == encrypt_password(password, admin.salt)
     end
   end
   

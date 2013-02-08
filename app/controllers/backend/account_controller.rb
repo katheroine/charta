@@ -25,10 +25,10 @@ class Backend::AccountController < Backend::ApplicationController
 			password = params[:password]
 			admin = current_admin.sign_in(login, password)
 			if admin
-				flash[:notice] = "You've been successfully logged in."
+				flash[:notice] = "You've been successfully signed in."
 				redirect_to '/admin/account'
 			else
-				flash[:notice] = "Wrong email or password."
+				flash[:notice] = "Wrong login or password."
 				redirect_to :action => :sign_in
 			end
 		else
