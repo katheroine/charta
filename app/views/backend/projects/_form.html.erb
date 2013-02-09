@@ -1,5 +1,5 @@
 <% if @project.errors.any? %>
-<div id="error_explanation">
+<div id="error_explanation" class="element">
 	<h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
 	<ul>
@@ -15,7 +15,7 @@
 		<%= f.label :name, :class => "name" %><%= f.text_field :name, :class => "content" %>
 	</div>
 	<div class="element_field">
-		<%= f.label :completion_date, :class => "name" %><div class="content select"><%= f.datetime_select :completion_date %></div>
+		<%= f.label :completion_date, :class => "name" %><div class="content select"><%= f.datetime_select :completion_date, {:include_blank => true, :default => nil} %></div>
 	</div>
 	<div class="element_field">
 		<%= f.label :localization, :class => "name" %><%= f.text_field :localization, :class => "content" %>
