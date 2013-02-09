@@ -27,7 +27,7 @@
 		<%= f.label :surface_area, :class => "name" %><%= f.number_field :surface_area, :class => "content" %>
 	</div>
 	<div class="element_field">
-		<%= f.label :state, :class => "name" %><%= f.text_field :state, :class => "content" %>
+		<%= f.label :state, :class => "name" %><div class="content select"><%= f.select :state, Project::STATES, :class => "content" %></div>
 	</div>
 	<div class="element_field">
 		<%= f.label :project_img_path, "Project image", :class => "name" %><%= f.file_field :project_img, :class => "content file" %>
