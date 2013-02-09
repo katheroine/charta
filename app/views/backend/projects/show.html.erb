@@ -27,11 +27,9 @@
 	<div class="element_field">
 	  <div class="name">State</div><div class="content"><%= @project.state %></div>
 	</div>
-	<% unless @project.project_img.blank? %>
 	<div class="element_field">
 	  <div class="name">Project image</div><%= image_tag @project.project_img.url(:small), :class => "content image" %>
 	</div>
-	<% end %>
 	<% unless @project.construction_img.blank? %>
 	<div class="element_field">
 	  <div class="name">Construction image</div><%= image_tag @project.construction_img.url(:small), :class => "content image" %>
