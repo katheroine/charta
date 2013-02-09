@@ -22,7 +22,7 @@
   
   <div id="menu">
     <div class="container">
-      <a href="">company</a><a href="">staff</a><a href="">projets</a><a href="">administrators</a>
+      <%= link_to 'company', admin_company_path  if current_admin.signed_in? %><%= link_to 'projets', admin_projects_path if current_admin.signed_in? %><%= link_to 'administrators', admin_admins_path if current_admin.is_root? %><%= link_to 'account', admin_account_path  if current_admin.signed_in? %>
     </div>
   </div>
 

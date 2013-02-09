@@ -22,7 +22,7 @@
 		<%= content_tag_for(:tr, @projects) do |project| %>
       <td><%= project.name %></td>
       <!--
-      <td><%= project.completion_date.to_date %></td>
+      <td><%= project.completion_date.to_date unless project.completion_date.nil? %></td>
       <td><%= project.localization %></td>
       <td><%= project.rooms_number %></td>
       <td><%= project.surface_area %></td>
