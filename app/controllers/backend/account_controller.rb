@@ -3,7 +3,7 @@ class Backend::AccountController < Backend::ApplicationController
 	def sign_in
 		if current_admin.signed_in? then
 			flash[:notice] = "You're signed in yet."
-			redirect_to '/admin/account'
+			redirect_to '/admin'
 		end
 	end
 	
@@ -26,7 +26,7 @@ class Backend::AccountController < Backend::ApplicationController
 			admin = current_admin.sign_in(login, password)
 			if admin
 				flash[:notice] = "You've been successfully signed in."
-				redirect_to '/admin/account'
+				redirect_to '/admin'
 			else
 				flash[:notice] = "Wrong login or password."
 				redirect_to :action => :sign_in
