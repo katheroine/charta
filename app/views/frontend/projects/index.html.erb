@@ -1,0 +1,5 @@
+<div id="gallery">
+	<%= content_tag_for(:div, @projects, :class => "gallery_item") do |project| %>
+		<div class="data"><p class="name"><%= project.name %></p></div><%= link_to image_tag(project.project_img.url(:small)), project_path(project), :class => "image" %>
+	<% end %>
+</div>

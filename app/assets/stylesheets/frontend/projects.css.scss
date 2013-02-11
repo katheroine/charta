@@ -1,0 +1,181 @@
+// Place all the styles related to the frontend/projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div#gallery
+{
+	//margin: 20px 0;
+}
+
+div#gallery div.gallery_item
+{
+	margin: 0;
+	padding: 0;
+	height: 160px;
+	margin: 20px 0;
+	border-radius: 15px;
+	background-color: #111111;
+	opacity: 0.99;
+}
+
+div#gallery div.gallery_item .data,
+div#gallery div.gallery_item .image
+{
+	display: inline-block;
+}
+
+
+div#gallery div.gallery_item .data
+{
+	width: 430px;
+	max-height: 140px;
+	padding: 15px 20px;
+	text-align: right;
+	vertical-align: top;
+	color: #dddddd;
+}
+
+div#gallery div.gallery_item .data .name
+{
+	font-size: 20px;
+}
+
+
+div#gallery div.gallery_item .image
+{
+	width: 430px;
+	height: 160px;
+}
+
+div#gallery div.gallery_item .image img
+{
+	width: 430px;
+	height: 160px;
+	border-radius: 0 15px 15px 0;
+	//border-radius: 15px 0 0 15px;
+}
+
+.presentation
+{
+	margin: 20px 0;
+	padding: 10px;
+	border-radius: 15px;
+	background-color: #111111;
+	opacity: 0.99;
+}
+
+.presentation div.left,
+.presentation div.right
+{
+	width: 435px;
+}
+
+.presentation div.left
+{
+	float: left;
+}
+
+.presentation div.right
+{
+	float: right;
+}
+
+.presentation div.center
+{
+	clear: both;
+	width: 880px;
+}
+
+.presentation div.center#gallery
+{
+	padding-top: 5px;
+}
+
+.presentation div.element_field
+{
+	margin: 10px 0;
+	//background-color: #666666;
+}
+
+.presentation div.element_field .title
+{
+	padding: 10px 20px;
+	font-size: 25px;
+	color: #ffffff;
+}
+
+.presentation div.element_field .name,
+.presentation div.element_field .content
+{
+	display: inline-block;
+}
+
+.presentation div.element_field .name
+{
+	width: 185px;
+	padding: 0 5px;
+	text-align: right;
+	font-size: 16px;
+	color: #aaaaaa;
+}
+
+.presentation div.element_field .content
+{
+	width: 665px;
+	padding: 0 10px;
+	font-size: 16px;
+	color: #ffffff;
+}
+
+.presentation div.left div.element_field .content,
+.presentation div.right div.element_field .content
+{
+	width: 220px;
+}
+
+.presentation div.element_field img.content
+{
+	display: block;
+	width: 860px;
+	border-radius: 5px;
+	padding: 0px;
+}
+
+div.presentation div.element_field.image
+{
+	margin: 20px 0;
+	padding: 10px;
+	border-radius: 10px; 
+	background-color: #070707;
+}
+
+div.presentation div.element_field.image img
+{
+	margin-top: 10px;
+}
+
+div#actions
+{
+	margin: 20px 0;
+	text-align: right;
+}
+
+div#actions > a
+{
+	display: inline-block;
+	padding: 8px 50px 8px 15px;
+	border-radius: 20px;
+	text-decoration: none;
+	font-size: 18px;
+	background-color: #333333;
+	background-image: url('../circle_scaffold.png');
+	background-position: right;
+	background-repeat: no-repeat;
+	color: #ffffff;
+}
+
+div#actions > a:hover
+{
+	background-color: #555555;
+	color: #eeeeee;
+}

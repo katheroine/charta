@@ -1,0 +1,45 @@
+<div class="presentation">
+	<div class="center">
+		<div class="element_field">
+		  <div class="title"><%= @project.name %></div>
+		</div>
+		<div class="element_field">
+		  <div class="name">Localization</div><div class="content"><%= @project.localization %></div>
+		</div>
+	</div>
+	<div class="left">
+		<div class="element_field">
+		  <div class="name">Rooms number</div><div class="content"><%= @project.rooms_number %></div>
+		</div>
+		<div class="element_field">
+		  <div class="name">Surface area</div><div class="content"><%= @project.surface_area %></div>
+		</div>
+	</div>
+	<div class="right">
+		<div class="element_field">
+		  <div class="name">State</div><div class="content"><%= @project.state %></div>
+		</div>
+		<div class="element_field">
+		  <div class="name">Completion date</div><div class="content"><%= @project.completion_date %></div>
+		</div>
+	</div>
+	<div class="center" id="gallery">
+		<div class="element_field image">
+		  <div class="name">Project</div><%= image_tag @project.project_img.url, :class => "content image" %>
+		</div>
+		<% unless @project.construction_img.blank? %>
+		<div class="element_field image">
+		  <div class="name">Construction</div><%= image_tag @project.construction_img.url, :class => "content image" %>
+		</div>
+		<% end %>
+		<% unless @project.result_img.blank? %>
+		<div class="element_field image">
+		  <div class="name">Result</div><%= image_tag @project.result_img.url, :class => "content image" %>
+		</div>
+		<% end %>
+	</div>
+</div>
+
+<div id="actions">
+	<%= link_to 'Projects list', projects_path %>
+</div>

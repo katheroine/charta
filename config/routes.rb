@@ -2,7 +2,8 @@ Charta::Application.routes.draw do
 
   scope :module => "frontend" do
     root :to => "company#index"
-    get "company/index" => "company#index"
+    get "/company" => "company#index"
+    resources :projects # TODO: only choosen action should be route
   end
   
   namespace :admin, :module => "backend" do
