@@ -1,4 +1,13 @@
 class Backend::AdminsController < Backend::ApplicationController
+	before_filter :require_signed_in_root
+	
+	def require_signed_in_root
+		unless current_admin.signed_in? && current_admin.is_root?
+			flash[:notice] = "You must be signed in root administrator for this activity"
+			redirect_to '/admin/account'
+		end
+  end
+	
   # GET /admins
   # GET /admins.json
   def index
