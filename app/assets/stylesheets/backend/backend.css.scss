@@ -119,9 +119,19 @@ body
 #main
 {
 	min-width: 980px;
-	padding: 10px 0;
+	//padding: 10px 0;
 	background-color: #eeeeee;
 	background-image: url('../noise.png');
+}
+
+#main .container
+{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-image: url('../scaffold.png');
+	background-position: top left;
+	background-repeat: no-repeat;
+	//background-color: black;
 }
 
 #dashboard

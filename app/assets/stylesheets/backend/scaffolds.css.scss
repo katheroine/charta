@@ -22,7 +22,8 @@ div#warning
 {
 	margin: 20px 0;
 	padding: 10px 15px;
-	border-radius: 10px
+	border-radius: 10px;
+	opacity: 0.9;
 }
 
 div.info
@@ -65,6 +66,7 @@ div#warning
 	background-color: #bb221c;
 	color: #ffffff;
 	font-size: 14px;
+	opacity: 0.9;
 }
 
 #error_explanation.element
@@ -117,6 +119,7 @@ div.controls .action
 	text-decoration: none;
 	font-size: 16px;
 	color: #eeeeee;
+	opacity: 0.9;
 }
 
 div.controls .action:hover
@@ -156,6 +159,7 @@ table.elements_list th,
 table.elements_list td
 {
 	padding: 5px 14px;
+	opacity: 0.9;
 }
 
 table.elements_list th
@@ -261,6 +265,7 @@ table.elements_list td.controls a:hover
 	margin: 10px 0;
 	border-radius: 10px;
 	background-color: #666666;
+	opacity: 0.9;
 }
 
 .presentation div.left div.element_field,
@@ -284,7 +289,6 @@ textarea
 .presentation div.element_field input[type="password"],
 .presentation div.element_field textarea
 {
-
 }
 
 .presentation div.element_field label.confirmation,
@@ -297,6 +301,7 @@ textarea
 .presentation div.element_field .content
 {
 	display: inline-block;
+	opacity: 0.9;
 }
 
 .presentation div.element_field .name
@@ -386,6 +391,7 @@ form.presentation div.element_field .content
 {
 	width: 700px;
 	margin-top: 0;
+	opacity: 0.9;
 }
 
 .presentation div.center div.controls
