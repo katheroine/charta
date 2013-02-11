@@ -15,11 +15,11 @@
   </thead>
   <tbody>
 		<%= content_tag_for(:tr, @admins) do |admin| %>
-      <td><%= admin.login %></td>
-      <td><%= admin.email %></td>
-      <td><%= admin.name %></td>
-      <td><%= admin.surname %></td>
-			<td class="controls">
+      <td <% if admin.is_root %> class="root_account" <% end %>><%= admin.login %></td>
+      <td <% if admin.is_root %> class="root_account" <% end %>><%= admin.email %></td>
+      <td <% if admin.is_root %> class="root_account" <% end %>><%= admin.name %></td>
+      <td <% if admin.is_root %> class="root_account" <% end %>><%= admin.surname %></td>
+			<td class="<% if admin.is_root %> root_account <% end %> controls">
 				<%= link_to 'Show', admin_admin_path(admin) %><%= link_to 'Edit', edit_admin_admin_path(admin) %><%= link_to 'Destroy', admin_admin_path(admin), method: :delete, data: { confirm: 'Are you sure?' } %>
 			</td>
 		<% end %>
@@ -27,7 +27,7 @@
 </table>
 <% else %>
 <div class="info">
-	There's no admins added yet
+	There's no administrators added yet
 </div>
 <% end %>
 

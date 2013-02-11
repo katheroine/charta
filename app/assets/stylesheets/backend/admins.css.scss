@@ -2,6 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* --- elements list --- */
+
+table.elements_list td.root_account 
+{
+	background-color: #032d38;
+	color: #eeeeee;
+}
+
+table.elements_list td.root_account.controls a
+{
+	color: #aabcc2;
+}
+
+/* --- presentation --- */
+
 .presentation div.element_field.admin_bio
 {
 	height: 73px;
