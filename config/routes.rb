@@ -6,6 +6,7 @@ Charta::Application.routes.draw do
   end
   
   namespace :admin, :module => "backend" do
+    get "/" => "index#index"
     resource :account, :controller => "account"
 		get "/sign_in" => "account#sign_in"
 		get "/sign_out" => "account#sign_out"
