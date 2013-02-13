@@ -2,6 +2,12 @@
 	<h1>Listing admins</h1>
 </div>
 
+<% if notice then %>
+<div id="notice">
+	<%= notice %>
+</div>
+<% end %>
+
 <% unless @admins.empty? then %>
 <table class="elements_list">
   <thead>
@@ -20,7 +26,7 @@
       <td <% if admin.is_root %> class="root_account" <% end %>><%= admin.name %></td>
       <td <% if admin.is_root %> class="root_account" <% end %>><%= admin.surname %></td>
 			<td class="<% if admin.is_root %> root_account <% end %> controls">
-				<%= link_to 'Show', admin_admin_path(admin) %><%= link_to 'Edit', edit_admin_admin_path(admin) %><%= link_to 'Destroy', admin_admin_path(admin), method: :delete, data: { confirm: 'Are you sure?' } %>
+				<%= link_to 'Show', admin_admin_path(admin) %><%= link_to 'Edit', edit_admin_admin_path(admin) %><%= link_to 'Destroy', admin_admin_path(admin), method: :delete, data: { confirm: 'Are you sure?' } unless admin.is_root %>
 			</td>
 		<% end %>
   </tbody>

@@ -8,6 +8,17 @@ class Admin < ActiveRecord::Base
   validates :password, :confirmation => true, :length => { :within => 8..32 }, :on => :update, :unless => lambda{ |admin| admin.password.blank? } 
   validates :login, :email, :presence => :true
   
+  before_destroy :ensure_admin_is_not_root
+  
+  protected
+  
+  def ensure_admin_is_not_root
+    if is_root
+      errors.set(:delete_root, "Root admin cannot be delete.")
+      false
+    end
+  end
+  
   private
   
   def generate_salt

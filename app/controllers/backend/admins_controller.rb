@@ -84,6 +84,8 @@ class Backend::AdminsController < Backend::ApplicationController
   def destroy
     @admin = Admin.find(params[:id])
     @admin.destroy
+    
+    flash[:notice] = @admin.errors[:delete_root] unless @admin.errors[:delete_root].empty?
 
     respond_to do |format|
       format.html { redirect_to admin_admins_url }
