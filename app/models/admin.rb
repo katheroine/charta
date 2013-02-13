@@ -6,7 +6,8 @@ class Admin < ActiveRecord::Base
   
   validates :password, :presence => true, :confirmation => true, :length => { :within => 8..32 }, :on => :create
   validates :password, :confirmation => true, :length => { :within => 8..32 }, :on => :update, :unless => lambda{ |admin| admin.password.blank? } 
-  validates :login, :email, :presence => :true
+  validates :login, :presence => :true, :uniqueness => :true
+  validates :email, :presence => :true, :length => { :maximum => 127 }, :format => { :with => /^([a-zA-Z0-9_-]+\.)*([-+a-zA-Z0-9_]+)@([a-zA-Z0-9_-]+\.)+([a-zA-Z]{2,6})$/, :message => "is not valid email address" }
   
   before_destroy :ensure_admin_is_not_root
   
